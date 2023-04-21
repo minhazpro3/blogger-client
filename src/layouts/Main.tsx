@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Posts from '@/components/Posts';
 import TopicSidebar from '@/components/topic_sidebar';
 

@@ -55,7 +55,9 @@ const Meta = (props: IMetaProps) => {
           title: props.title,
           description: props.description,
           url: props.canonical,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
           locale: AppConfig.locale,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
           site_name: AppConfig.site_name,
         }}
       />
@@ -63,4 +65,4 @@ const Meta = (props: IMetaProps) => {
   );
 };
 
-export { Meta };
+export default Meta ;

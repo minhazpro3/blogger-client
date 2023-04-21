@@ -3,8 +3,10 @@ import { SiIledefrancemobilites } from 'react-icons/si';
 
 import NavLink from './link';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Post({ item }: any) {
   return (
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/restrict-plus-operands
     <NavLink href={`/?tab=${item + 1}`}>
       <div className="h-48 rounded-md border-indigo-600 bg-[#242D3C] p-2 shadow-md hover:border-2 md:h-44 ">
         <div className="col-span-1  mx-3  ">

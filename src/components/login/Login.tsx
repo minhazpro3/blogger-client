@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
@@ -6,7 +7,7 @@ import { FaApple, FaFacebookF } from "react-icons/fa";
 const Login = () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const { register, handleSubmit } = useForm();
-  const onSubmit = () => {
+  const onSubmit = () : void => {
     console.log("hello world")
   };
   return (

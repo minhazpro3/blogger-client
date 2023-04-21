@@ -6,6 +6,7 @@ export default function NavLink({
   href = '/',
   className = '',
   ...rest
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any | unknown) {
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

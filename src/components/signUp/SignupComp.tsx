@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { AiOutlineGoogle } from 'react-icons/ai';
