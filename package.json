@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "aos": "^3.0.0-beta.6",
     "next": "^13.2.4",
     "next-auth": "^4.21.0",
     "next-seo": "^6.0.0",
@@ -21,6 +23,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/eslint": "^8.21.3",
     "@types/node": "^18.15.5",
     "@types/prettier": "^2.7.2",
