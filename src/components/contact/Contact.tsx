@@ -1,9 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/consistent-type-imports */
+/* eslint-disable @typescript-eslint/no-misused-promises */
+
 import "aos/dist/aos.css";
 import AOS from 'aos';
- 
+
 import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -11,30 +12,55 @@ import { MdLocationPin } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsDownload } from "react-icons/bs";
+import { useForm, SubmitHandler } from "react-hook-form";
+interface IFormInput {
+  username: string;
+  email:string;
+  phone:number;
+  message:any;
 
+}
 const Contact = () => {
-    
-const [showModal,setShowModal]=useState(true)
+  const { register, handleSubmit } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data)
 
-    useEffect(() => {
-        AOS.init();
-      });
+
+  const bgImage = "https://i.ibb.co/5nJrtjr/businessman-touching-virtual-screen.jpg"
+
+  const [showModal, setShowModal] = useState(true)
+
+  useEffect(() => {
+    AOS.init();
+  });
   return (
-    <div>
+    <div style={{backgroundImage:`url(${bgImage})`,  backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    height: '700px',}}>
       <div
         data-aos="zoom-in-up"
         className="justify-center items-center top-0 left-0  w-full h-full outline-none  overflow-y-auto inset-0 z-50   focus:outline-none modal fade fixed "
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl ">
-          <div className=" bg-black opacity-90 flex   ">
+          <div className=" bg-indigo-950		 opacity-90 flex   ">
             <div className=" container mx-auto px-8 md:px-0 ">
+             
               <div className=" grid md:grid-cols-12 gap-8 mx-8 my-4 pt-4 pb-6 ">
                 <div className="md:col-span-5">
                   <div>
+                  <h4 className="text-white ">Welcome to TOKEN IT Solution</h4>
+ 
                     <div>
                       <img
                         className=" rounded-3xl w-36"
-                        src="https://i.ibb.co/dQTk2t7/cs-2-removebg-preview.png"
+                        src="https://i.ibb.co/St2VrKR/people-working-call-center-removebg-preview.png"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <img
+                        className=" rounded-3xl w-36"
+                        src="https://i.ibb.co/pbkmkbC/hot-line-contact-us-call-center-search-interface-removebg-preview.png"
                         alt=""
                       />
                     </div>
@@ -126,50 +152,55 @@ const [showModal,setShowModal]=useState(true)
                     </div>
                   </div>
                 </div>
-                <div className="md:col-span-7">
-                  <div>
-                    <h2 className="text-white font-medium text-2xl ">
-                      About <span className="text-red-600">Me</span>
-                    </h2>
-                    <p className="text-white text-base font-medium opacity-70">
-                      -----------------------------------------------------------
-                    </p>
-                    <p className="text-white text-base font-medium opacity-70">
-                      {" "}
-                      My name is Md Minhaz. I am a Web Developer, and I'm very
-                      passionate and dedicated to my work. With 2 years
-                      experience as a professional a Web Developer , I have
-                      acquired the skills and knowledge.
-                    </p>
-                  </div>
-                  <div className="mt-12">
-                    <h3 className="text-white font-medium text-2xl ">
-                      Quality <span className="text-red-600">Services</span>
-                    </h3>
-                    <p className="text-white text-base font-medium opacity-70">
-                      -----------------------------------------------------------
-                    </p>
-
-                    <h4 className="text-white font-medium text-xl flex items-center gap-3">
-                      <BsArrowRight /> ReactJs Development
-                    </h4>
-                    <h4 className="text-white font-medium text-xl flex items-center gap-3">
-                      <BsArrowRight /> Front End Development
-                    </h4>
-                    <h4 className="text-white font-medium text-xl flex items-center gap-3">
-                      <BsArrowRight /> Mern Stack Development
-                    </h4>
-                  </div>
-                  <div className="mt-12">
-                    <h3 className="text-white font-medium text-2xl ">Skills</h3>
-                    <p className="text-white text-base font-medium opacity-70">
-                      -----------------------------------------------------------
-                    </p>
-                    <p className="text-white font-medium text-base">
-                      Html5, Css3, React Bootstrap, TailwindCss, JavaScript,
-                      React.js, Next.js, Redux, Scss, Node.js, Mongodb,
-                      Express.js, Firebase, RestApi, MsWord, MsExcel, Photoshop,
-                      Illustrator.
+                <div className="md:col-span-7 self-center">
+                  <div className="w-full max-w-xs">
+                    <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                      {/* user name input */}
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                          Username
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                        {...register("username")}
+                        id="username" type="text" placeholder="Username"  />
+                      </div>
+                      {/* email input */}
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                          Email
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                        {...register("email")}
+                        id="email" type="text" placeholder="Email"  />
+                      </div>
+                      {/* number input */}
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                          Phone
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                        {...register("phone")}
+                        id="phone" type="number" placeholder="Phone"  />
+                      </div>
+                      {/* message input */}
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+                          Message
+                        </label>
+                        <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                        {...register("message")}
+                        id="message"  placeholder="Message"  />
+                      </div>
+                     
+                      <div className="flex items-center justify-between">
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                          Sign In
+                        </button>
+                         
+                      </div>
+                    </form>
+                    <p className="text-center text-gray-500 text-xs">
+                      &copy;2023 Unique gamers. All rights reserved.
                     </p>
                   </div>
                   <div className="relative">
