@@ -18,5 +18,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ['images.pexels.com', "res.cloudinary.com", "animals.png", "i.ibb.co", "img.freepik.com"],
+  },
 };
 export default config;
