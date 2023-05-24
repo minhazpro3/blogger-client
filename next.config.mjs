@@ -7,7 +7,9 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-
+  experimental: {
+    appDir: true,
+  },
   /**
    * If you have `experimental: { appDir: true }` set, then you must comment the below `i18n` config
    * out.
@@ -21,5 +23,6 @@ const config = {
   images: {
     domains: ['images.pexels.com', "res.cloudinary.com", "animals.png", "i.ibb.co", "img.freepik.com"],
   },
+  
 };
 export default config;

@@ -1,7 +1,9 @@
+import SignupComp from "@/components/signUp/SignupComp";
+
 export default function Page (){
     return(
         <div>
-            Signin page
+            <SignupComp/>
         </div>
     )
 }

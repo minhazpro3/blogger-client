@@ -1,7 +1,9 @@
+import Login from "@/components/login/Login";
+
 export default function Page (){
     return(
         <div>
-            sign in page
+           <Login/>
         </div>
     )
 }
