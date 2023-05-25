@@ -13,6 +13,7 @@
     "aos": "^3.0.0-beta.6",
     "next": "^13.4.3",
     "next-auth": "^4.21.0",
+    "next-router-mock": "^0.9.3",
     "next-seo": "^6.0.0",
     "react": "18.2.0",
     "react-codemirror2": "^7.2.1",

@@ -2,10 +2,12 @@
 // import 'codemirror/lib/codemirror.css';
 // import 'codemirror/theme/material.css';
 // import 'codemirror/mode/javascript/javascript';
-
-import { useRouter } from 'next/router';
+"use client"
+ 
 import React, { useState } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
+import mockRouter from 'next-router-mock';
+
 
 interface BlogPost {
   title: string;
@@ -19,7 +21,7 @@ export default function Post() {
     code: '',
   });
 
-  const router = useRouter();
+  
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBlogPost({ ...blogPost, title: event.target.value });
@@ -39,7 +41,7 @@ export default function Post() {
     event.preventDefault();
     // code to submit blog post
     // once the blog post is submitted, navigate back to the blog list page
-    void router.push('/blog-list');
+    void mockRouter.push('/blog-list');
   };
 
   return (
