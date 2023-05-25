@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 /* eslint-disable @typescript-eslint/no-misused-promises */
-
+"use client"
 import "aos/dist/aos.css";
 import AOS from 'aos';
 
