@@ -29,11 +29,11 @@ export default function Doc({ doc }: { doc: docTypes }) {
             style={{ width: "100px", height: "100px" }}
           ></lottie-player>
         </div>
-        <h2 className=" text-3xl text-white">{doc?.title}</h2>
+        <h2 className=" text-xl sm:text-2xl lg:text-3xl text-white ">{doc?.title}</h2>
         <p className="text-white text-start my-2">{doc?.desc}</p>
-        <div className="text-end px-3 md:px-8">
+        <div className="text-end px-3 md:px-6 lg:px--8">
           <button className={`text-base rounded-md px-6 py-2 bg-slate-400   ${doc?.title === "Fundamentals Doc" ? "text-indigo-800" : doc?.title === "Market Data Doc" ? "text-orange-700" : "text-fuchsia-800"}`} >Explore &#8594;</button>
-          </div>
+        </div>
       </div>
     </motion.div>
   )
