@@ -1,29 +1,28 @@
 "use client"
 import React, { useRef } from "react";
-import lottiFelesFiles from "../../../localData/33518-paper-file-and-document-animations.json"
+import { motion } from "framer-motion";
 
 type docTypes = {
-title:string,
-desc:string,
-id:number,
-icon:string
+  title: string,
+  desc: string,
+  id: number,
+  icon: string
 }
 
-export default function Doc({doc}:{doc:docTypes} ) {
+export default function Doc({ doc }: { doc: docTypes }) {
   const ref = useRef(null);
   React.useEffect(() => {
     import("@lottiefiles/lottie-player");
   });
 
   return (
-    <div className="bg-slate-950 p-4 border-2 border-slate-600 rounded-md">
-      <div>
-        <div>
+    <motion.div transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }}   whileHover={{ scale: 1.1 }} className="bg-slate-950    p-4 border-2 border-slate-600 rounded-md hover:">
+      <div className="text-center">
+        <div className="flex justify-center" >
           <lottie-player
             id="firstLottie"
             ref={ref}
             autoplay
-
             loop
             mode="normal"
             src={doc?.icon}
@@ -33,7 +32,6 @@ export default function Doc({doc}:{doc:docTypes} ) {
         <h2 className=" text-3xl text-white">{doc?.title}</h2>
         <p className="text-white">{doc?.desc}</p>
       </div>
-
-    </div>
+    </motion.div>
   )
 }
