@@ -45,7 +45,7 @@ export default function Post() {
   };
 
   return (
-    <div>
+    <div className='bg-white'>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title</label>
