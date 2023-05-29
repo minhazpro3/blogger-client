@@ -16,7 +16,7 @@ export default function Doc({ doc }: { doc: docTypes }) {
   });
 
   return (
-    <motion.div transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }} whileHover={{ scale: 1.1 }} className="bg-slate-950 p-4 sm:p-3 sm:py-4 justify-self-center md:p-6 border-2 border-slate-600 rounded-md hover:">
+    <motion.div transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }} whileHover={{ scale: 1.1 }} className="bg-slate-950 p-4 sm:p-3 sm:py-4 justify-self-center md:p-4 border-2 border-slate-600 rounded-md hover:">
       <div className="text-center">
         <div className="flex justify-center" >
           <lottie-player
@@ -30,7 +30,7 @@ export default function Doc({ doc }: { doc: docTypes }) {
           ></lottie-player>
         </div>
         <h2 className=" text-xl sm:text-2xl lg:text-3xl text-white ">{doc?.title}</h2>
-        <p className="text-white text-start my-2">{doc?.desc}</p>
+        <p className="text-white text-start my-2 text-base sm:text-sm md:text-base">{doc?.desc}</p>
         <div className="text-end px-3 md:px-6 lg:px--8">
           <button className={`text-base rounded-md px-6 py-2 bg-slate-400   ${doc?.title === "Fundamentals Doc" ? "text-indigo-800" : doc?.title === "Market Data Doc" ? "text-orange-700" : "text-fuchsia-800"}`} >Explore &#8594;</button>
         </div>

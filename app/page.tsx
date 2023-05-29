@@ -1,4 +1,5 @@
 "use client"
+import HomeBanner from '@/components/home/Banner'
 import Docs from '@/components/home/banner_doc/Docs'
 import Help_articles from '@/components/home/banner_doc/Help_articles'
 import React from 'react'
@@ -8,6 +9,7 @@ const Page = () => {
     <div>
       <div className="my-8">
 
+      <HomeBanner/>
       <Docs />
       <Help_articles/>
       </div>
