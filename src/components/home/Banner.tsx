@@ -7,7 +7,8 @@ export default function HomeBanner() {
     });
     return (
         <div className="container mx-auto px-8 md:px-0 ">
-            <div className="flex justify-around items-center gap-6 my-10">
+           <div className="relative">
+           <div className="flex justify-around items-center gap-6 my-10">
                 <div className="flex justify-center">
 
                     <div>
@@ -35,11 +36,37 @@ export default function HomeBanner() {
         https://assets6.lottiefiles.com/packages/lf20_6WBFSD.json
         https://assets5.lottiefiles.com/packages/lf20_orznphcd.json
         https://assets3.lottiefiles.com/packages/lf20_X53TyG4jhE.json
+        https://assets9.lottiefiles.com/packages/lf20_tqvrzfnf.json
+        
         
 
         */}
                 </div>
             </div>
+           <div className="absolute top-12 left-[30%]">
+           <lottie-player
+                        id="firstLottie"
+                        ref={ref}
+                        autoplay
+                        loop
+                        mode="normal"
+                        src="https://assets9.lottiefiles.com/packages/lf20_tqvrzfnf.json"
+                        style={{ width: "100px", height: "100px" }}
+                    ></lottie-player>
+           </div>
+           <div className="absolute right-[40%] bottom-12">
+           <lottie-player
+                        id="firstLottie"
+                        ref={ref}
+                        autoplay
+                        loop
+                        mode="normal"
+                        src="https://assets9.lottiefiles.com/packages/lf20_tqvrzfnf.json"
+                        style={{ width: "100px", height: "100px" }}
+                    ></lottie-player>
+           </div>
+           </div>
+                     
         </div>
     )
 }
