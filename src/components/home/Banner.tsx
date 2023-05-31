@@ -7,11 +7,11 @@ export default function HomeBanner() {
     });
     return (
         <div className="container mx-auto px-8 md:px-0 ">
-            <div className="relative">
+            <div className="relative md:my-16">
                 <div className="md:flex justify-around items-center gap-6 my-10">
                     <div className="flex justify-center">
                         <div>
-                            <h2 className="text-white text-5xl sm:text-xl md:text-5xl lg:text-6xl">Main feature
+                            <h2 className="text-white text-5xl sm:text-6xl md:text-5xl lg:text-6xl">Main feature
                                 <br />
                                 of <span className="text-fuchsia-600 font-semibold font-base ">Brainwave</span>
                             </h2>
@@ -21,7 +21,7 @@ export default function HomeBanner() {
                     </div>
                     {/* banner right main image */}
                     <div className="flex justify-center my-16 md:my-0">
-                     <div className="md:w-[600px] w-[450px] md:h-[450px] h-[300px]">
+                     <div className="lg:w-[600px] md:w-[300px] w-[450px] lg:h-[450px] md:h-[300px] h-[300px]">
                      <lottie-player
                             id="firstLottie"
                             ref={ref}
@@ -93,7 +93,7 @@ export default function HomeBanner() {
                     ></lottie-player>
                 </div>
                 {/* arrow down to up */}
-                <div className="absolute top-20 left-0 md:top-36 md:left-28 -z-10 w-[300px] md:w-[400px] h-[300px] md:[400px]  ">
+                <div className="absolute top-20 left-0 sm:left-12 sm:top-28 md:top-28 lg:top-56 md:-left-10 lg:left-2 -z-10 w-[300px] sm:w-[350px] md:w-[400px]  h-[300px] md:[400px]  ">
                     <lottie-player
                         id="firstLottie"
                         ref={ref}

@@ -17,7 +17,7 @@ export default function Doc({ doc }: { doc: docTypes }) {
 
   return (
     <motion.div transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }} whileHover={{ scale: 1.1 }} className="bg-slate-950 p-4 sm:p-3 sm:py-4 justify-self-center md:p-4 border-2 border-slate-600 rounded-md hover:">
-      <div className="text-center">
+      <div className="text-center ">
         <div className="flex justify-center" >
           <lottie-player
             id="firstLottie"
