@@ -1,6 +1,9 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useRef,useEffect } from "react";
 import { motion } from "framer-motion";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type docTypes = {
   title: string,
@@ -10,13 +13,16 @@ type docTypes = {
 }
 
 export default function Doc({ doc }: { doc: docTypes }) {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const ref = useRef(null);
   React.useEffect(() => {
     import("@lottiefiles/lottie-player");
   });
 
   return (
-    <motion.div transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }} whileHover={{ scale: 1.1 }} className="bg-slate-950 p-4 sm:p-3 sm:py-4 justify-self-center md:p-4 border-2 border-slate-600 rounded-md hover:">
+    <motion.div data-aos="fade-up" data-aos-duration="2000" transition={{ duration: 1, ease: [0, 0.71, 1, 1.5] }} whileHover={{ scale: 1.1 }} className="bg-slate-950 p-4 sm:p-3 sm:py-4 justify-self-center md:p-4 border-2 border-slate-600 rounded-md hover:">
       <div className="text-center ">
         <div className="flex justify-center" >
           <lottie-player

@@ -1,6 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef,useEffect } from "react";
+
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function HomeBanner() {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const ref = useRef(null);
     React.useEffect(() => {
         import("@lottiefiles/lottie-player");
@@ -8,8 +15,8 @@ export default function HomeBanner() {
     return (
         <div className="container mx-auto px-8 md:px-0 ">
             <div className="relative md:my-16">
-                <div className="md:flex justify-around items-center gap-6 my-10">
-                    <div className="flex justify-center">
+                <div   className="md:flex justify-around items-center gap-6 my-10">
+                    <div data-aos="fade-up" data-aos-duration="2000" className="flex justify-center">
                         <div>
                             <h2 className="text-white text-5xl sm:text-6xl md:text-5xl lg:text-6xl">Main feature
                                 <br />
@@ -20,7 +27,7 @@ export default function HomeBanner() {
                         </div>
                     </div>
                     {/* banner right main image */}
-                    <div className="flex justify-center my-16 md:my-0">
+                    <div data-aos="fade-up" data-aos-duration="2000" className="flex justify-center my-16 md:my-0">
                      <div className="lg:w-[600px] md:w-[300px] w-[450px] lg:h-[450px] md:h-[300px] h-[300px]">
                      <lottie-player
                             id="firstLottie"
@@ -42,7 +49,7 @@ export default function HomeBanner() {
         https://assets9.lottiefiles.com/packages/lf20_tqvrzfnf.json
         */}
                     </div>
-                </div>
+                </div >
                  {/* bounce ball left */}
                 <div className="absolute -top-3 md:top-16 left-[33%] md:left-[25%] w-[50px] h-[50px]">
                     <lottie-player

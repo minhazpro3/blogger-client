@@ -1,4 +1,6 @@
 "use client"
+ 
+import 'aos/dist/aos.css';
 import './globals.css'
 import { Inter } from 'next/font/google'
 

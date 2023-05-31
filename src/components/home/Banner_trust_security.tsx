@@ -1,6 +1,11 @@
-import React, { useRef } from "react";
-
+import React, { useRef, useEffect } from "react";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function HomeTrustSecurity() {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const ref = useRef(null);
     React.useEffect(() => {
         import("@lottiefiles/lottie-player");
@@ -12,7 +17,7 @@ export default function HomeTrustSecurity() {
 
 
                 <div className="sm:flex justify-evenly md:justify-around items-center">
-                    <div className="flex items-center gap-4  px-4 md:6 rounded-md ">
+                    <div data-aos="fade-up" data-aos-duration="2000" className="flex items-center gap-4  px-4 md:6 rounded-md ">
 
                         <div>
                             <lottie-player
@@ -27,7 +32,7 @@ export default function HomeTrustSecurity() {
                         </div>
                         <h4 className="text-white text-xl sm:text-sm">Advanced Integration</h4>
                     </div>
-                    <div className="flex items-center gap-4  px-4 md:6 rounded-md my-2 sm:my-0 ">
+                    <div data-aos="fade-up" data-aos-duration="2000" className="flex items-center gap-4  px-4 md:6 rounded-md my-2 sm:my-0 ">
 
                         <div>
                             <lottie-player
@@ -43,7 +48,7 @@ export default function HomeTrustSecurity() {
                         </div>
                         <h4 className="text-white text-xl sm:text-sm">Customizable Branding</h4>
                     </div>
-                    <div className="flex items-center gap-4  px-4 md:6 rounded-md ">
+                    <div data-aos="fade-up" data-aos-duration="2000" className="flex items-center gap-4  px-4 md:6 rounded-md ">
                         <div>  <lottie-player
                             id="firstLottie"
                             ref={ref}
