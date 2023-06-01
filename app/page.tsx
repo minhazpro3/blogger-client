@@ -10,10 +10,13 @@ const Page = () => {
     <div>
       <div className="my-8">
 
-      <HomeBanner/>
-      <HomeTrustSecurity/>
-      <Docs />
-      <Help_articles/>
+        <HomeBanner />
+        <HomeTrustSecurity />
+        <Docs />
+
+        <div className='mb-12'>
+          <Help_articles />
+        </div>
       </div>
     </div>
   )
