@@ -114,8 +114,20 @@ const Share = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <h2>Explore feature</h2>
+                                <div className="w-full mt-4">
+                                   <div className="relative   p-4 bg-slate-800 rounded-lg  h-[290px]">
+                                   <h2 className="absolute bottom-5 text-4xl">Explore feature</h2>
+                                   <div className="absolute bottom-5 right-6 ">
+                                <lottie-player
+                                    id="firstLottie"
+                                    ref={ref}
+                                    autoplay
+                                    loop
+                                    mode="normal"
+                                    src="https://assets10.lottiefiles.com/packages/lf20_80nu1g6c.json"
+                                    style={{ width: "70px", height: "70px" }}
+                                ></lottie-player></div>
+                                   </div>
                                 </div>
                             </div>
                         </div>
