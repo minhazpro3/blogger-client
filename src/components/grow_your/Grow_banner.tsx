@@ -49,6 +49,40 @@ export default function HomeGrowYou() {
                 </div>
             </div>
 
+
+            <div className="sm:flex justify-between my-8 p-2">
+                <div className="w-full">
+                </div>
+                <div className="w-full flex justify-center gap-3">
+                    <div className="w-full border-2 border-gray-600 rounded-md p-3">
+                    <div>  <lottie-player
+                            id="firstLottie"
+                            ref={ref}
+                            autoplay
+                            loop
+                            mode="normal"
+                            src="https://assets9.lottiefiles.com/private_files/lf30_uo4w38uo.json"
+                            style={{ width: "50px", height: "50px" }}
+                        ></lottie-player></div>
+                        <h3 className="text-white text-xl">Experimental Ceam</h3>
+                        <p className="text-white">Our designer before in offering the services that charces off action oftion the eye and creats great impact on the mind.</p>
+                    </div>
+                    <div className="w-full border-2 border-gray-600 rounded-md p-3">
+                    <div>  <lottie-player
+                            id="firstLottie"
+                            ref={ref}
+                            autoplay
+                            loop
+                            mode="normal"
+                            src="https://assets10.lottiefiles.com/packages/lf20_VN4Cyr7rjC.json"
+                            style={{ width: "50px", height: "50px" }}
+                        ></lottie-player></div>
+                        <h3 className="text-white text-xl">Stragic Solution</h3>
+                        <p className="text-white">Our designer before in offering the services that charces off action oftion the eye and creats great impact on the mind.</p>
+
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
