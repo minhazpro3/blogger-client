@@ -1,4 +1,5 @@
 "use client"
+import HomeGrowYou from '@/components/grow_your/Grow_banner'
 import HomeBanner from '@/components/home/Banner'
 import HomeTrustSecurity from '@/components/home/Banner_trust_security'
 import Docs from '@/components/home/banner_doc/Docs'
@@ -23,6 +24,7 @@ const Page = () => {
         <div>
           <Share/>
         </div>
+        <HomeGrowYou/>
       </div>
     </div>
   )

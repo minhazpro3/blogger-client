@@ -25,7 +25,7 @@ const Share = () => {
                     <div className="grid grid-cols-3 gap-4">
                         {/* messaging */}
                         <div className="col-span-1 border-2 relative border-slate-800 sm:h-[450px] rounded-lg md:h-[600px] py-8 px-6">
-
+                                <h2 className=" pb-4 text-base text-green-300 font-medium uppercase ">Can you contact anytime 24/7</h2>
                             <div className="flex justify-center">
                                 <lottie-player
                                     id="firstLottie"
