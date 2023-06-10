@@ -9,7 +9,7 @@ export default function SubtitleHome() {
             <div className="my-8">
 
                 <div className='grid grid-rows-4 gap-y-1 justify-center'>
-                    <p className="my-1 p-0 m-0 self-center ">On this page</p>
+                    <p className="my-1 p-0 m-0 self-center text-indigo-200 ">On this page</p>
                     <div className="group mt-1" >
                         <h4 className="mb-2 group-hover:text-indigo-400  group-focus:text-indigo-400 ">Basic usage</h4>
                         <button className="flex justify-center items-center  text-sm focus:text-indigo-400">
