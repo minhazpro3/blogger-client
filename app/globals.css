@@ -4,7 +4,7 @@
 
 *,
 *::after,
-*::before{
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,19 +13,42 @@
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
+  border-radius: 50px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
+  border-radius: 50px;
   background: #203153;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
   background: #050c1a;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #263149;
+  background: #050c1b;
+  border-radius: 50px;
 }
+
+.main-bg-full {
+  z-index: 1;
+  background: radial-gradient(#0f172a, #101c31);
+}
+/* .main-bg-full::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/172/34/484/code-coding-geek-programmer-wallpaper-preview.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px); /* Adding blur background image */
+/* z-index: -1; */
+/* }  */

@@ -7,13 +7,13 @@ import { FaApple, FaFacebookF } from "react-icons/fa";
 const Login = () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const { register, handleSubmit } = useForm();
-  const onSubmit = () : void => {
-    console.log("hello world")
+  const onSubmit = (): void => {
+    console.log("Hello world");
   };
   return (
     <div className="container mx-auto px-8 md:px-0">
       <div className=" grid justify-center pb-12">
-        <div className="mt-20 mb-6 flex justify-center md:mt-28 md:mb-12">
+        <div className="mb-6 mt-20 flex justify-center md:mb-12 md:mt-28">
           <div className="w-10/12 md:w-8/12   ">
             <h2 className="text-center text-5xl font-bold">
               Signin to Your Account
@@ -44,7 +44,7 @@ const Login = () => {
               />
               <br />
               <input
-                className="w-[280px] cursor-pointer rounded border border-blue-500 bg-gradient-to-r from-green-400 to-yellow-200 py-2 px-4 font-semibold text-black hover:border-transparent hover:bg-blue-500   md:w-[350px]"
+                className="w-[280px] cursor-pointer rounded border border-blue-500 bg-gradient-to-r from-green-400 to-yellow-200 px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-blue-500   md:w-[350px]"
                 type="submit"
                 value="Signin to Your Account             	&#8594;"
               />
@@ -99,7 +99,9 @@ const Login = () => {
           </p>
         </div>
         <div className="justify-between px-2 md:flex">
-          <p className="text-center text-base font-normal">Suppory/Privacy Policy</p>
+          <p className="text-center text-base font-normal">
+            Suppory/Privacy Policy
+          </p>
           <p className="text-center text-base font-normal">
             Copyright@Team unique gamers 2023
           </p>
