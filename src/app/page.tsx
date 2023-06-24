@@ -1,4 +1,4 @@
-import GrowBanner from "@/components/grow_your/grow_banner";
+import GrowBanner from "@/components/home/grow_your/grow_banner";
 import Header from "@/components/header";
 import HomeBanner from "@/components/home/Banner";
 import HomeTrustSecurity from "@/components/home/Banner_trust_security";
@@ -14,7 +14,7 @@ const Page = () => {
         <Header />
         <HomeBanner />
         <HomeTrustSecurity />
-        <Docs />
+        {/* <Docs /> */}
 
         <div className="mb-12">
           <Help_articles />
