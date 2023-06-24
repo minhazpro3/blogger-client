@@ -2,6 +2,7 @@
 import "aos/dist/aos.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
       >
         <body className={`bg-[#000000] ${inter.className} main-bg-full`}>
           {children}
+          <Analytics />
         </body>
       </motion.div>
     </html>

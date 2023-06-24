@@ -1,6 +1,9 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export default function Page({ params }: { params: { lang: string } }) {
+  // const response = await fetch("/api/language?lang=python");
+  // const data = await response.json();
+  // console.log(data);
   return (
     <div className="text-justify">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum,

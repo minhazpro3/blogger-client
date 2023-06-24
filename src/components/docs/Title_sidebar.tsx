@@ -22,7 +22,7 @@ const Title_sidebar: React.FC<PropsTypes> = ({
       </h2>
       {/* Buttons */}
       <div className="mt-6">
-        <Link legacyBehavior href={`/${lang}/editor-setup`}>
+        <Link legacyBehavior href={`/doc/${lang}/editor-setup`}>
           <a className="group/edit flex items-center">
             <span className="mr-4 flex h-6 w-6 items-center justify-center rounded-md bg-slate-800 text-center text-lg shadow-sm group-hover/edit:bg-cyan-700">
               <AiOutlineSetting />
@@ -42,7 +42,7 @@ const Title_sidebar: React.FC<PropsTypes> = ({
               {langDoc.topics.map((doc) => (
                 <Link
                   legacyBehavior
-                  href={`/${lang}/${doc.slug}`}
+                  href={`/doc/${lang}/${doc.slug}`}
                   key={doc.order}
                 >
                   <a className="block select-none border-l border-gray-700  py-2 pl-5 text-left text-base hover:border-l-2 hover:border-cyan-700 hover:text-gray-300">
