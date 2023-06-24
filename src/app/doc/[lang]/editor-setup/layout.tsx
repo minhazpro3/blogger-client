@@ -30,7 +30,7 @@ export default function EditorSetupLayout({
           {tabs.map((tab, index) => (
             <Link
               legacyBehavior
-              href={`/${params.lang}/editor-setup/${tab.toLowerCase()}`}
+              href={`/doc/${params.lang}/editor-setup/${tab.toLowerCase()}`}
               key={index}
             >
               <a

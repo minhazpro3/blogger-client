@@ -60,8 +60,8 @@ export default function GrowBanner() {
             </button>
             <div className="absolute top-0 -z-10 flex h-full w-full justify-center">
               <lottie-player
-                className="!h-full !w-full"
-                id="firstLottie"
+                className="grow-banner-lottie"
+                id="grow-banner-lottie"
                 ref={ref}
                 autoplay
                 loop

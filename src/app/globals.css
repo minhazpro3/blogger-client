@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --code-block-background-color: #2a2a2a;
+  --scrollbar-track-background-color: #717171;
+  --scrollbar-thumb-background-color: rgba(32, 34, 37, 0.6);
+  --scrollbar-color: rgba(32, 34, 37, 0.6) #5a5a5a;
+}
 *,
 *::after,
 *::before {
@@ -10,28 +16,17 @@
   box-sizing: border-box;
 }
 
-/* width */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 50px;
+  width: 10px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 50px;
-  background: #203153;
+  background: var(--scrollbar-track-background-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background: #050c1a;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #050c1b;
-  border-radius: 50px;
+  background: var(--scrollbar-thumb-background-color);
 }
 
 .main-bg-full {
@@ -52,3 +47,8 @@
   filter: blur(2px); /* Adding blur background image */
 /* z-index: -1; */
 /* }  */
+
+lottie-player#grow-banner-lottie {
+  height: 100% !important;
+  width: 100% !important;
+}
