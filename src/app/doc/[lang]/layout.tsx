@@ -1,12 +1,9 @@
 "use client";
-import SubtitleHome from "@/components/Docs/SubTitle_sidebar";
-import Title_sidebar from "@/components/Docs/Title_sidebar";
-import Header from "@/components/Docs/header";
+import Title_sidebar from "@/components/docs/Title_sidebar";
+import Header from "@/components/header";
 import languages from "@/languages";
 import { type SectionTypes } from "@/languages/types";
 import NotFound from "@/ui/notFound";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
 
 export default function DocsLayout({
   children,
@@ -17,6 +14,7 @@ export default function DocsLayout({
 }) {
   const langSlug: string = params.lang;
   const language: SectionTypes | unknown = languages[langSlug];
+
   return (
     <div>
       <Header />

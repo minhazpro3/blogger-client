@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export default function Page({ params }: { params: { lang: string } }) {
   return (
