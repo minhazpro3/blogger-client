@@ -9,7 +9,10 @@ interface ParamsTypes {
 
 async function getData({ slug }: any) {
   const res = await axios.get(`/api/v1/doc/slug/${slug as string}`);
-  return (res as any).json();
+  if (res.status !== 200) {
+    throw new Error("Faild to fetch data");
+  }
+  return res;
 }
 
 const Page = async ({ params }: ParamsTypes) => {
