@@ -17,19 +17,27 @@ export default function MarkdownPreview({
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
-            console.log(match);
             // match?.map((i) => console.log({ i }));
             return !inline && match ? (
-              <SyntaxHighlighter
-                {...props}
-                // eslint-disable-next-line react/no-children-prop
-                children={String(children).replace(/\n$/, "")}
-                style={dark}
-                language={match[1]}
-                PreTag="div"
-              />
+              <div>
+                <div className="language-code-head">
+                  {match[1] === "js" ? "javascript" : match[1]}
+                </div>
+                {
+                  <SyntaxHighlighter
+                    className="language-code-body"
+                    {...props}
+                    // eslint-disable-next-line react/no-children-prop
+                    children={String(children).replace(/\n$/, "")}
+                    style={dark}
+                    language={match[1]}
+                    PreTag="div"
+                  />
+                }
+              </div>
             ) : (
               <code {...props} className={className}>
+                hello
                 {children}
               </code>
             );
