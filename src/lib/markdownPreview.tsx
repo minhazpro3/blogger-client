@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import React from "react";
+import React, { ReactNode, useState } from "react";
 
 export default function MarkdownPreview({
   markdownContent,
@@ -55,12 +55,12 @@ export default function MarkdownPreview({
           // Map `h1` (`# heading`) to use `h2`s.
           // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
           em: ({ node, ...props }) => <i style={{ color: "red" }} {...props} />,
-          h1: HeadingComponent,
-          h2: HeadingComponent,
-          h3: HeadingComponent,
-          h4: HeadingComponent,
-          h5: HeadingComponent,
-          h6: HeadingComponent,
+          h1: (props) => <HeadingComponent {...props} />,
+          h2: (props) => <HeadingComponent {...props} />,
+          h3: (props) => <HeadingComponent {...props} />,
+          h4: (props) => <HeadingComponent {...props} />,
+          h5: (props) => <HeadingComponent {...props} />,
+          h6: (props) => <HeadingComponent {...props} />,
         }}
       >
         {transformedContent}
@@ -78,7 +78,10 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
   level,
   children,
 }) => {
-  const id = children[1]<string | undefined | null>.trim().toLowerCase().replace(/\s/g, "-");
+  const id = ((children as ReactNode[])[1] as string)
+    .trim()
+    .toLowerCase()
+    .replace(/\s/g, "-");
   console.log({ id });
   const handleClick = () => {
     const element = document.getElementById(id);
@@ -90,9 +93,6 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
   return (
     <React.Fragment>
       {React.createElement(`h${level}`, { id }, children)}
-      <a href={`#${id}`} onClick={handleClick}>
-        #
-      </a>
     </React.Fragment>
   );
 };
