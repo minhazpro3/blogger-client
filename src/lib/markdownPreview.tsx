@@ -4,21 +4,29 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import React, { ReactNode, useState } from "react";
+import React, { type ReactNode, useState } from "react";
 
+interface LinksTypes {
+  title: string;
+  link: string;
+}
 export default function MarkdownPreview({
   markdownContent,
 }: {
   markdownContent: string;
 }) {
+  const [headLinks, setHeadLinks] = useState<LinksTypes[]>([]);
   const transformedContent = markdownContent.replace(
     /^(#+)\s+(.*?)\s*$/gm,
     (match: string, hashes: string, title: string) => {
       const level = hashes.length;
       const id = title.toLowerCase().replace(/\s/g, "-");
+      setHeadLinks((prevHeadLinks) => [...prevHeadLinks, { link: id, title }]);
       return `<h${level} id="${id}"><a href="#${id}" className="hash-link">#</a> ${title}</h${level}>`;
     }
   );
+
+  console.log(headLinks);
 
   return (
     <div className="markdown-preview-custom">
