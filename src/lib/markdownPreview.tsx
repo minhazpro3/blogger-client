@@ -16,7 +16,7 @@ export default function MarkdownPreview({
     (match: string, hashes: string, title: string) => {
       const level = hashes.length;
       const id = title.toLowerCase().replace(/\s/g, "-");
-      return `<h${level} id="${id}"><a href="#${id}">#</a> ${title}</h${level}>`;
+      return `<h${level} id="${id}"><a href="#${id}" className="hash-link">#</a> ${title}</h${level}>`;
     }
   );
 
@@ -69,11 +69,6 @@ export default function MarkdownPreview({
   );
 }
 
-interface CodeComponentProps {
-  language: string;
-  value: string;
-}
-
 interface HeadingComponentProps {
   level: number;
   children: React.ReactNode;
@@ -83,9 +78,8 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
   level,
   children,
 }) => {
-  console.log(children);
-  const id = children.toString().toLowerCase().replace(/\s/g, "-");
-  console.log(id);
+  const id = children[1]<string | undefined | null>.trim().toLowerCase().replace(/\s/g, "-");
+  console.log({ id });
   const handleClick = () => {
     const element = document.getElementById(id);
     if (element) {
