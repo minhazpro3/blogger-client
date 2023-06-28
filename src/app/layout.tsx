@@ -1,6 +1,7 @@
 "use client";
 import "aos/dist/aos.css";
 import "./globals.css";
+import "./markdown.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
