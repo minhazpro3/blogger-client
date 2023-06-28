@@ -89,67 +89,67 @@
   ==========================
   */
 /* Reset default styles */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+.markdown-preview-custom html,
+.markdown-preview-custom body,
+.markdown-preview-custom div,
+.markdown-preview-custom span,
+.markdown-preview-custom applet,
+.markdown-preview-custom object,
+.markdown-preview-custom iframe,
+.markdown-preview-custom h1,
+.markdown-preview-custom h2,
+.markdown-preview-custom h3,
+.markdown-preview-custom h4,
+.markdown-preview-custom h5,
+.markdown-preview-custom h6,
+.markdown-preview-custom p,
+.markdown-preview-custom blockquote,
+.markdown-preview-custom pre,
+.markdown-preview-custom a,
+.markdown-preview-custom abbr,
+.markdown-preview-custom acronym,
+.markdown-preview-custom address,
+.markdown-preview-custom big,
+.markdown-preview-custom cite,
+.markdown-preview-custom code,
+.markdown-preview-custom del,
+.markdown-preview-custom dfn,
+.markdown-preview-custom em,
+.markdown-preview-custom img,
+.markdown-preview-custom ins,
+.markdown-preview-custom kbd,
+.markdown-preview-custom q,
+.markdown-preview-custom s,
+.markdown-preview-custom samp,
+.markdown-preview-custom small,
+.markdown-preview-custom strike,
+.markdown-preview-custom strong,
+.markdown-preview-custom sub,
+.markdown-preview-custom sup,
+.markdown-preview-custom tt,
+.markdown-preview-custom var,
+.markdown-preview-custom b,
+.markdown-preview-custom u,
+.markdown-preview-custom i,
+.markdown-preview-custom center,
+.markdown-preview-custom dl,
+.markdown-preview-custom dt,
+.markdown-preview-custom dd,
+.markdown-preview-custom ol,
+.markdown-preview-custom ul,
+.markdown-preview-custom li,
+.markdown-preview-custom fieldset,
+.markdown-preview-custom form,
+.markdown-preview-custom label,
+.markdown-preview-custom legend,
+.markdown-preview-custom table,
+.markdown-preview-custom caption,
+.markdown-preview-custom tbody,
+.markdown-preview-custom tfoot,
+.markdown-preview-custom thead,
+.markdown-preview-custom tr,
+.markdown-preview-custom th,
+.markdown-preview-custom td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -159,68 +159,68 @@ td {
 }
 
 /* Basic styles */
-body {
+.markdown-preview-custom body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #000;
 }
 
-h1 {
+.markdown-preview-custom h1 {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-h2 {
+.markdown-preview-custom h2 {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-h3 {
+.markdown-preview-custom h3 {
   font-size: 1.17em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-p {
+.markdown-preview-custom p {
   margin-bottom: 1em;
 }
 
-a {
+.markdown-preview-custom a {
   color: #007bff;
   text-decoration: none;
 }
 
 /* Lists */
-ul,
-ol {
+.markdown-preview-custom ul,
+.markdown-preview-custom ol {
   margin-left: 1.5em;
   margin-bottom: 1em;
 }
 
 /* Tables */
-table {
+.markdown-preview-customtable {
   border-collapse: collapse;
   width: 100%;
 }
 
-th,
-td {
+.markdown-preview-custom th,
+.markdown-preview-custom td {
   padding: 0.5em;
   border: 1px solid #ccc;
 }
 
 /* Images */
-img {
+.markdown-preview-custom img {
   max-width: 100%;
   height: auto;
 }
 /* Form elements */
-input,
-textarea,
-select {
+.markdown-preview-custom input,
+.markdown-preview-custom textarea,
+.markdown-preview-custom select {
   margin-bottom: 1em;
   padding: 0.5em;
   border: 1px solid #ccc;
@@ -229,8 +229,8 @@ select {
   font-size: 16px;
 }
 
-button,
-input[type="submit"] {
+.markdown-preview-custom button,
+.markdown-preview-custom input[type="submit"] {
   padding: 0.5em 1em;
   background-color: #007bff;
   color: #fff;
@@ -240,16 +240,15 @@ input[type="submit"] {
 }
 
 /* Miscellaneous */
-hr {
+.markdown-preview-custom hr {
   border: none;
   border-top: 1px solid #ccc;
   margin: 1em 0;
 }
 
-code {
+.markdown-preview-custom code {
   font-family: Consolas, monospace;
   font-size: 14px;
-  /* background-color: #f5f5f5; */
   padding: 0.25em 0.5em;
 }
 
@@ -271,4 +270,11 @@ code {
   p {
     font-size: 0.9em;
   }
+}
+
+.markdown-preview-custom pre div {
+  border: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: none !important;
 }
