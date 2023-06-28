@@ -7,6 +7,24 @@ interface ParamsTypes {
   lang: string;
 }
 
+interface DataTypes {
+  msg: string;
+  data: {
+    _id: string;
+    name: string;
+    content: string;
+    tags: string[];
+    slug: string;
+    meta_title: string;
+    meta_description: string;
+    meta_keywords: string;
+    topic: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  };
+}
+
 async function getData({ slug }: any) {
   const res = await axios.get(`/api/v1/doc/slug/${slug as string}`);
   if (res.status !== 200) {
@@ -15,11 +33,15 @@ async function getData({ slug }: any) {
   return res;
 }
 
-const Page = async ({ params }: ParamsTypes) => {
+const Page = async ({ params }: { params: ParamsTypes }) => {
   const router = useRouter();
   const data = await getData({ slug: params.slug });
-  console.log(data);
-  return <div>Welcome to slug {params.slug}</div>;
+  const { content, _id } = (data.data as DataTypes).data || {};
+  return (
+    <div>
+      Welcome to slug {_id} {content}
+    </div>
+  );
 };
 
 export default Page;
