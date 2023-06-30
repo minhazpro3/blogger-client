@@ -1,5 +1,5 @@
 import React from "react";
 
-const hashLinkContext = React.createContext({});
+const HashLinkContext = React.createContext({});
 
-export default hashLinkContext;
+export default HashLinkContext;
