@@ -2,15 +2,18 @@
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
+import { useContext } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import React, { type ReactNode } from "react";
+import HashLinkContext from "@/contexts/hashLinkContext";
 
 export default function MarkdownPreview({
   markdownContent,
 }: {
   markdownContent: string;
 }) {
+  const value = useContext(HashLinkContext);
   const hashLinks: { slug: string; title: string }[] = [];
   const transformedContent = markdownContent.replace(
     /^(#+)\s+(.*?)\s*$/gm,
