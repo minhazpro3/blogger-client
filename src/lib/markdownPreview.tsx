@@ -4,34 +4,23 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import React, { type ReactNode, useState, useEffect, useRef } from "react";
+import React, { type ReactNode } from "react";
 
-interface LinksTypes {
-  title: string;
-  link: string;
-}
 export default function MarkdownPreview({
   markdownContent,
 }: {
   markdownContent: string;
 }) {
-  const [headLinks, setHeadLinks] = useState<LinksTypes[]>([]);
-  const transformedContentRef = useRef<string>("");
-
-  useEffect(() => {
-    transformedContentRef.current = markdownContent.replace(
-      /^(#+)\s+(.*?)\s*$/gm,
-      (hashes: string, title: string) => {
-        const level = hashes.length;
-        console.log(level);
-        const id = title.toLowerCase().replace(/\s/g, "-");
-        setHeadLinks([...headLinks, { link: id, title }]);
-        return `<h${level} id="${id}"><a href="#${id}" className="hash-link">#</a> ${title}</h${level}>`;
-      }
-    );
-  }, [headLinks, markdownContent]);
-
-  console.log(headLinks);
+  const hashLinks: { slug: string; title: string }[] = [];
+  const transformedContent = markdownContent.replace(
+    /^(#+)\s+(.*?)\s*$/gm,
+    (match: string, hashes: string, title: string) => {
+      const level = hashes.length;
+      const id = title.toLowerCase().replace(/\s/g, "-");
+      hashLinks.push({ slug: id, title });
+      return `<h${level} id="${id}"><a href="#${id}" className="hash-link">#</a> ${title}</h${level}>`;
+    }
+  );
 
   return (
     <div className="markdown-preview-custom">
@@ -76,7 +65,7 @@ export default function MarkdownPreview({
           h6: (props) => <HeadingComponent {...props} />,
         }}
       >
-        {transformedContentRef.current}
+        {transformedContent}
       </ReactMarkdown>
     </div>
   );
@@ -95,7 +84,6 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
     .trim()
     .toLowerCase()
     .replace(/\s/g, "-");
-  console.log({ id });
   const handleClick = () => {
     const element = document.getElementById(id);
     if (element) {
@@ -108,4 +96,8 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
       {React.createElement(`h${level}`, { id }, children)}
     </React.Fragment>
   );
+};
+
+const PreviewHeader = () => {
+  return <div></div>;
 };
