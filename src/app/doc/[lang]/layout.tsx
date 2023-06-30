@@ -7,6 +7,10 @@ import { type SectionTypes } from "@/languages/types";
 import NotFound from "@/ui/notFound";
 import { useState } from "react";
 
+interface HashLink {
+  title: string;
+  slug: string;
+}
 export default function DocsLayout({
   children,
   params,
@@ -16,13 +20,13 @@ export default function DocsLayout({
 }) {
   const langSlug: string = params.lang;
   const language: SectionTypes | unknown = languages[langSlug];
-  const [selectedLink, setSelectedLink] = useState({});
-
+  const [selectedLink, setSelectedLink] = useState<HashLink>();
+  const links: HashLink[] = [];
   return (
     <HashLinkContext.Provider
       value={{
         state: {
-          links: [],
+          links,
           selectedLink,
         },
         setSelectedLink: setSelectedLink,

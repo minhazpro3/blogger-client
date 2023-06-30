@@ -15,6 +15,7 @@ export default function MarkdownPreview({
 }) {
   const value = useContext(HashLinkContext);
   const { state, setSelectedLink } = value || {};
+  console.log(state, setSelectedLink);
   const hashLinks: { slug: string; title: string }[] = [];
   const transformedContent = markdownContent.replace(
     /^(#+)\s+(.*?)\s*$/gm,
