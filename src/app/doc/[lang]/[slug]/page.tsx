@@ -1,5 +1,5 @@
 "use client";
-import axios from "@/lib/axios";
+import axios from "axios";
 import MarkdownPreview from "@/lib/markdownPreview";
 import { useRouter } from "next/navigation";
 import { NextPage } from "next/types";
@@ -26,21 +26,23 @@ interface DataTypes {
   };
 }
 
-async function getData({ slug }: any) {
-  const res = await axios.get(`/api/v1/doc/slug/${slug as string}`);
+async function getData(slug: string) {
+  const res = await fetch(`http://localhost:3000/api/v2/doc/${slug}`, {
+    method: "GET",
+  });
   if (res.status !== 200) {
     throw new Error("Faild to fetch data");
   }
-  return res;
+  return res.json();
 }
 
 const Page = async ({ params }: { params: ParamsTypes }) => {
-  const router = useRouter();
-  const data = await getData({ slug: params.slug });
-  const { content, _id } = (data.data as DataTypes).data || {};
+  const { msg, data } = await getData(params.slug);
+  console.log(msg, data);
   return (
     <div>
-      <MarkdownPreview markdownContent={content} />
+      {data}
+      {/* <MarkdownPreview markdownContent={content} /> */}
     </div>
   );
 };
