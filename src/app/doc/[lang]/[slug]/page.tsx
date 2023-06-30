@@ -1,8 +1,10 @@
 "use client";
 import axios from "@/lib/axios";
 import MarkdownPreview from "@/lib/markdownPreview";
+import PreviewHeader from "@/lib/previewHeader";
 import { useRouter } from "next/navigation";
 import { NextPage } from "next/types";
+import { useState } from "react";
 interface ParamsTypes {
   slug: string;
   lang: string;
@@ -38,9 +40,12 @@ const Page = async ({ params }: { params: ParamsTypes }) => {
   const router = useRouter();
   const data = await getData({ slug: params.slug });
   const { content, _id } = (data.data as DataTypes).data || {};
+  const links: { slug: string; title: string }[] = [];
+  const [hashBar, setHashBar] = useState<boolean>(true);
   return (
     <div>
-      Welcome to slug {_id} <MarkdownPreview markdownContent={content} />
+      <PreviewHeader links={links} hashBar={hashBar} setHashBar={setHashBar} />
+      <MarkdownPreview links={links} markdownContent={content} />
     </div>
   );
 };

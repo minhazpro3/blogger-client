@@ -8,14 +8,17 @@ import React, { type ReactNode } from "react";
 
 export default function MarkdownPreview({
   markdownContent,
+  links,
 }: {
   markdownContent: string;
+  links: { title: string; slug: string }[];
 }) {
   const transformedContent = markdownContent.replace(
     /^(#+)\s+(.*?)\s*$/gm,
     (match: string, hashes: string, title: string) => {
       const level = hashes.length;
       const id = title.toLowerCase().replace(/\s/g, "-");
+      links.push({ title, slug: id });
       return `<h${level} id="${id}"><a href="#${id}" className="hash-link">#</a> ${title}</h${level}>`;
     }
   );
@@ -94,8 +97,4 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
       {React.createElement(`h${level}`, { id }, children)}
     </React.Fragment>
   );
-};
-
-const PreviewHeader = () => {
-  return <div></div>;
 };
