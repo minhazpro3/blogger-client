@@ -10,39 +10,26 @@ interface ParamsTypes {
 
 interface DataTypes {
   msg: string;
-  data: {
-    _id: string;
-    name: string;
-    content: string;
-    tags: string[];
-    slug: string;
-    meta_title: string;
-    meta_description: string;
-    meta_keywords: string;
-    topic: string;
-    createdAt: string;
-    updatedAt: string;
-    __v: number;
-  };
+  data: string;
 }
 
-async function getData(slug: string) {
+async function getData(slug: string): Promise<DataTypes> {
   const res = await fetch(`http://localhost:3000/api/v2/doc/${slug}`, {
     method: "GET",
   });
   if (res.status !== 200) {
     throw new Error("Faild to fetch data");
   }
-  return res.json();
+  return res.json() as Promise<DataTypes>;
 }
 
 const Page = async ({ params }: { params: ParamsTypes }) => {
-  const { msg, data } = await getData(params.slug);
+  const { msg, data }: DataTypes = await getData(params.slug);
   console.log(msg, data);
   return (
     <div>
       {data}
-      {/* <MarkdownPreview markdownContent={content} /> */}
+      <MarkdownPreview markdownContent={data} />
     </div>
   );
 };
