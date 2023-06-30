@@ -93,12 +93,9 @@ interface HeadingComponentProps {
   children: React.ReactNode;
 }
 
-const HeadingComponent: React.FC<HeadingComponentProps> = ({
-  level,
-  children,
-}) => {
-  const id = ((children as ReactNode[])[1] as string)
-    .trim()
+const HeadingComponent = ({ children, level }: HeadingComponentProps) => {
+  const id = ((children as ReactNode[])[0] as string)
+    ?.trim()
     .toLowerCase()
     .replace(/\s/g, "-");
   const handleClick = () => {
@@ -107,10 +104,32 @@ const HeadingComponent: React.FC<HeadingComponentProps> = ({
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <React.Fragment>
       {React.createElement(`h${level}`, { id }, children)}
     </React.Fragment>
   );
 };
+
+// const HeadingComponent: React.FC<HeadingComponentProps> = ({
+//   level,
+//   children,
+// }) => {
+//   // const id = ((children as ReactNode[])[1] as string)
+//   // .trim()
+//   // .toLowerCase()
+//   // .replace(/\s/g, "-");
+//   console.log(chlidren);
+//   const handleClick = () => {
+//     const element = document.getElementById("id");
+//     if (element) {
+//       element.scrollIntoView({ behavior: "smooth" });
+//     }
+//   };
+
+//   return (
+//     <React.Fragment>
+//       {React.createElement(`h${level}`, { "id" }, children)}
+//     </React.Fragment>
+//   );
+// };

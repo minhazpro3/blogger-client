@@ -1,8 +1,5 @@
 "use client";
-import axios from "axios";
 import MarkdownPreview from "@/lib/markdownPreview";
-import { useRouter } from "next/navigation";
-import { NextPage } from "next/types";
 interface ParamsTypes {
   slug: string;
   lang: string;
@@ -28,7 +25,6 @@ const Page = async ({ params }: { params: ParamsTypes }) => {
   console.log(msg, data);
   return (
     <div>
-      {data}
       <MarkdownPreview markdownContent={data} />
     </div>
   );
