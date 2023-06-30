@@ -7,10 +7,6 @@ import { type SectionTypes } from "@/languages/types";
 import NotFound from "@/ui/notFound";
 import { useState } from "react";
 
-interface HashLink {
-  title: string;
-  slug: string;
-}
 export default function DocsLayout({
   children,
   params,
@@ -20,37 +16,25 @@ export default function DocsLayout({
 }) {
   const langSlug: string = params.lang;
   const language: SectionTypes | unknown = languages[langSlug];
-  const [selectedLink, setSelectedLink] = useState<HashLink>();
-  const links: HashLink[] = [];
   return (
-    <HashLinkContext.Provider
-      value={{
-        state: {
-          links,
-          selectedLink,
-        },
-        setSelectedLink: setSelectedLink,
-      }}
-    >
-      <div>
-        <Header />
-        {!language ? (
-          <div className="container flex h-screen w-screen items-center justify-center text-center">
-            <NotFound />
-          </div>
-        ) : (
-          <div className="container mx-auto h-screen max-w-[1360px] px-5">
-            <div className="flex h-full gap-4 text-[#92a1b6]">
-              {/*   sidebar */}
-              <div className="fixed h-full w-[300px]  pt-[7%] ">
-                <Title_sidebar language={language as []} lang={params.lang} />
-              </div>
-              {/* main  */}
-              <div className="w-full pl-[315px] pt-[7%]">{children}</div>
+    <div>
+      <Header />
+      {!language ? (
+        <div className="container flex h-screen w-screen items-center justify-center text-center">
+          <NotFound />
+        </div>
+      ) : (
+        <div className="container mx-auto h-screen max-w-[1360px] px-5">
+          <div className="flex h-full gap-4 text-[#92a1b6]">
+            {/*   sidebar */}
+            <div className="fixed h-full w-[300px]  pt-[7%] ">
+              <Title_sidebar language={language as []} lang={params.lang} />
             </div>
+            {/* main  */}
+            <div className="w-full pl-[315px] pt-[7%]">{children}</div>
           </div>
-        )}
-      </div>
-    </HashLinkContext.Provider>
+        </div>
+      )}
+    </div>
   );
 }
