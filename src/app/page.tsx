@@ -1,11 +1,12 @@
+"use client";
 import GrowBanner from "@/components/home/grow_your/grow_banner";
 import Header from "@/components/header";
 import HomeBanner from "@/components/home/Banner";
 import HomeTrustSecurity from "@/components/home/Banner_trust_security";
-import Docs from "@/components/home/banner_doc/Docs";
 import Help_articles from "@/components/home/banner_doc/Help_articles";
 import Share from "@/components/share_and_talk/Share";
 import React from "react";
+import Hello from "./hello.mdx";
 
 const Page = () => {
   return (
@@ -25,6 +26,7 @@ const Page = () => {
           <Share />
         </div>
         <GrowBanner />
+        <Hello />
       </div>
     </div>
   );

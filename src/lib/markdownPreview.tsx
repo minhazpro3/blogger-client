@@ -94,7 +94,8 @@ interface HeadingComponentProps {
 }
 
 const HeadingComponent = ({ children, level }: HeadingComponentProps) => {
-  const id = ((children as ReactNode[])[0] as string)
+  console.log({ children });
+  const id = ((children as ReactNode[])[1] as string)
     ?.trim()
     .toLowerCase()
     .replace(/\s/g, "-");

@@ -4,10 +4,18 @@ import "./globals.css";
 import "./markdown.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-
 const inter = Inter({ subsets: ["latin"] });
-
 import { motion } from "framer-motion";
+// import NProgress from "nprogress";
+// import Router from "next/router";
+
+// Router.onRouteChangeStart = url => {
+//   NProgress.start()
+// }
+
+// Router.onRouteChangeComplete = () => NProgress.done()
+
+// Router.onRouteChangeError = () => NProgress.done();
 
 export default function RootLayout({
   children,

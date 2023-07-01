@@ -11,9 +11,12 @@ interface DataTypes {
 }
 
 async function getData(slug: string): Promise<DataTypes> {
-  const res = await fetch(`http://localhost:3000/api/v2/doc/${slug}`, {
-    method: "GET",
-  });
+  const res = await fetch(
+    `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
+    {
+      method: "GET",
+    }
+  );
   if (res.status !== 200) {
     throw new Error("Faild to fetch data");
   }
