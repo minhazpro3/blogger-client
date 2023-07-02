@@ -1,4 +1,6 @@
 "use client";
+import { MDXRemote } from "next-mdx-remote";
+
 import MarkdownPreview from "@/lib/markdownPreview";
 interface ParamsTypes {
   slug: string;
@@ -12,7 +14,8 @@ interface DataTypes {
 
 async function getData(slug: string): Promise<DataTypes> {
   const res = await fetch(
-    `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
+    // `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
+    `http://localhost:3000/api/v2/doc/${slug}`,
     {
       method: "GET",
     }
@@ -25,10 +28,11 @@ async function getData(slug: string): Promise<DataTypes> {
 
 const Page = async ({ params }: { params: ParamsTypes }) => {
   const { msg, data }: DataTypes = await getData(params.slug);
-  console.log(msg, data);
+  console.log(typeof data);
   return (
     <div>
-      <MarkdownPreview markdownContent={data} />
+      {/* <MDXRemote source={markdown} /> */}
+      {/* <MarkdownPreview markdownContent={data} /> */}
     </div>
   );
 };

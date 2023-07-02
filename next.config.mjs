@@ -5,14 +5,14 @@ const withMDX = nextMDX({
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
+    providerImportSource: "@mdx-js/react",
   },
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pagesDirectory: "app",
   experimental: {
-    appDir: true,
     mdxRs: true,
   },
   images: {
@@ -26,4 +26,7 @@ const nextConfig = {
   },
 };
 
-export default withMDX(nextConfig);
+export default withMDX({
+  ...nextConfig,
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+});

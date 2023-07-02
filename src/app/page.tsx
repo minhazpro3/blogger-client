@@ -6,7 +6,6 @@ import HomeTrustSecurity from "@/components/home/Banner_trust_security";
 import Help_articles from "@/components/home/banner_doc/Help_articles";
 import Share from "@/components/share_and_talk/Share";
 import React from "react";
-import Hello from "./hello.mdx";
 
 const Page = () => {
   return (
@@ -26,7 +25,6 @@ const Page = () => {
           <Share />
         </div>
         <GrowBanner />
-        <Hello />
       </div>
     </div>
   );

@@ -11,10 +11,10 @@ export default async function handler(
   try {
     const markdownDocDirectory = path.join(
       process.cwd(),
-      "src/markdown/documents"
+      "src/app/markdown/documents"
     );
-    const realSlug = (slug as string).replace(/\.md$/, "");
-    const fullPath = markdownDocDirectory + `/${realSlug}.md`;
+    const realSlug = (slug as string).replace(/\.mdx$/, "");
+    const fullPath = markdownDocDirectory + `/${realSlug}.mdx`;
     const document = await fs.readFile(fullPath, "utf8");
 
     res.status(200).json({ msg: "Data fetch", data: document });
