@@ -13,26 +13,30 @@ interface DataTypes {
 }
 
 async function getData(slug: string): Promise<DataTypes> {
-  const res = await fetch(
-    // `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
-    `http://localhost:3000/api/v2/doc/${slug}`,
-    {
-      method: "GET",
+  try {
+    const res = await fetch(
+      `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
+      // `http://localhost:3000/api/v2/doc/${slug}`,
+      {
+        method: "GET",
+      }
+    );
+    if (res.status !== 200) {
+      throw new Error("Faild to fetch data");
     }
-  );
-  if (res.status !== 200) {
+    return res.json() as Promise<DataTypes>;
+  } catch (err) {
     throw new Error("Faild to fetch data");
   }
-  return res.json() as Promise<DataTypes>;
 }
 
 const Page = async ({ params }: { params: ParamsTypes }) => {
   const { msg, data }: DataTypes = await getData(params.slug);
-  console.log(data.);
+  console.log(msg);
   return (
     <div>
-      {/* <MDXRemote source={markdown} /> */}
-      {/* <MarkdownPreview markdownContent={data} /> */}
+      {/* <MDXRemote source={data} /> */}
+      <MarkdownPreview markdownContent={data} />
     </div>
   );
 };
