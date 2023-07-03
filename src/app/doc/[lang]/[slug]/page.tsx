@@ -28,7 +28,7 @@ async function getData(slug: string): Promise<DataTypes> {
 
 const Page = async ({ params }: { params: ParamsTypes }) => {
   const { msg, data }: DataTypes = await getData(params.slug);
-  console.log(typeof data);
+  console.log(data.);
   return (
     <div>
       {/* <MDXRemote source={markdown} /> */}

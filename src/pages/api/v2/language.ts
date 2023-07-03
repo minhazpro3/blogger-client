@@ -19,7 +19,6 @@ export default async function handler(
       const jsonData = await fsPromises.readFile(dataFilePath, "utf-8");
       // const data: object = JSON.parse(jsonData.toString());
       const data: unknown = JSON.parse(jsonData);
-      console.log(typeof jsonData);
       res.status(200).json({ message: "Hello world", data });
     } catch (err) {
       res.status(404).json({

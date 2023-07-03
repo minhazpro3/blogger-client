@@ -11,7 +11,6 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pagesDirectory: "app",
   experimental: {
     mdxRs: true,
   },
