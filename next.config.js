@@ -13,6 +13,7 @@ const withMDX = nextMDX({
 const nextConfig = {
   experimental: {
     mdxRs: true,
+    appDir: true,
   },
   images: {
     domains: [
@@ -23,6 +24,7 @@ const nextConfig = {
       "img.freepik.com",
     ],
   },
+  reactStrictMode: true,
 };
 
 export default withMDX({
