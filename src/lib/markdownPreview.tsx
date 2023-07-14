@@ -10,10 +10,10 @@ import React, { type ReactNode } from "react";
 export default function MarkdownPreview({
   markdownContent,
 }: {
-  markdownContent: string;
+  markdownContent: any;
 }) {
   const links: { slug: string; title: string }[] = [];
-  const transformedContent = markdownContent.replace(
+  const transformedContent = (markdownContent as string).replace(
     /^(#+)\s+(.*?)\s*$/gm,
     (match: string, hashes: string, title: string) => {
       const level = hashes.length;
