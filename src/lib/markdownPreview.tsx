@@ -8,6 +8,7 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 // import React, { type ReactNode } from "react";
 
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import CodeHighlighter from "./code-highlighter";
 
 // export default function MarkdownPreview({
 //   markdownContent,
@@ -159,18 +160,7 @@ export default function MarkdownPreview({
             return !inline && match ? (
               <div>
                 <div className="language-code-head">{matchLanguage}</div>
-
-                <SyntaxHighlighter
-                  className="language-code-body"
-                  style={dark}
-                  language={match?.[1] ?? ""}
-                  PreTag="div"
-                  {...rest}
-                >
-                  {String(children).replace(/\n$/, "")}
-                </SyntaxHighlighter>
-
-                {console.log("match")}
+                <CodeHighlighter code={String(children).replace(/\n$/, "")} />
               </div>
             ) : (
               <code {...rest} className={className}>
