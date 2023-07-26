@@ -1,3 +1,7 @@
+---
+title: Python Syntax
+---
+
 # Operators in Javascript
 
 Operators in JavaScript are symbols or keywords used to perform operations on values. They are fundamental components of the language and are used to perform mathematical calculations, manipulate data, compare values, and more. Operators act on one or more operands and produce a result.

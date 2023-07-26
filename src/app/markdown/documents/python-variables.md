@@ -1,3 +1,7 @@
+---
+title: Python Variables
+---
+
 # Operators and Assignments in JavaScript
 
 Operators and assignments are fundamental concepts in JavaScript that enable you to perform calculations, manipulate data, and assign values to variables. JavaScript provides a wide range of operators for different purposes, including arithmetic operations, comparison, logical operations, and more. Understanding operators and assignments is essential for writing effective JavaScript code.

@@ -1,3 +1,7 @@
+---
+title: Python Numbers
+---
+
 # Comparison Operators in JavaScript
 
 Comparison operators are used to compare values and return a boolean result (`true` or `false`) based on the comparison. JavaScript provides a variety of comparison operators that allow you to evaluate conditions and make decisions in your code.

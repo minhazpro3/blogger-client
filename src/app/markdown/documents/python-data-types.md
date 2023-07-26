@@ -1,3 +1,7 @@
+---
+title: Python Data types
+---
+
 # $Congratulations$
 
      on completing the section on operators in JavaScript! You have now gained a solid understanding of the various types of operators and how they can be used to perform calculations, make comparisons, manipulate data, and control program flow.
