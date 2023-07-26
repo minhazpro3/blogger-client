@@ -9,7 +9,8 @@ Operators and assignments are fundamental concepts in JavaScript that enable you
 Arithmetic operators are used to perform mathematical calculations on numeric values. JavaScript supports the following arithmetic operators:
 
 - <strong>Addition (`+`) </strong> : Adds two operands.
-- <strong>Subtraction (`-`) </strong> : Subtracts the second operand from the first operand.
+- <strong>Subtraction (`-`) </strong> : Subtracts the second operand from the first
+  operand.
 - <strong>Multiplication (`*`) </strong> : Multiplies two operands.
 - <strong>Division (`/`) </strong> : Divides the first operand by the second operand.
 - <strong>Modulo (`%`) </strong> : Returns the remainder after division.
@@ -30,7 +31,8 @@ b--; // b is decremented by 1
 console.log(b); // Output: 2
 ```
 
-<br /><br />
+<br />
+<br />
 
 ## Assignment Operators
 
@@ -54,19 +56,26 @@ w /= 3; // Equivalent to w = w / 3
 console.log(w); // Output: 5
 ```
 
-<br /><br />
+<br />
+<br />
 
 ## Comparison Operators
 
 Comparison operators are used to compare values and return a boolean result (true or false). JavaScript supports the following comparison operators:
 
-- <strong> Equal to (`==`) </strong> : Returns `true` if the operands are equal in value.
-- <strong> Not equal to (`!=`) </strong> : Returns `true` if the operands are not equal in value.
-- <strong>Strict equal to (`===`) </strong> : Returns `true` if the operands are equal in value and type.
-- <strong>Strict not equal to (`!==`) </strong> : Returns `true` if the operands are not equal in value or type.
-- <strong>Greater than (`>`) </strong> : Returns `true` if the left operand is greater than the right operand.
+- <strong> Equal to (`==`) </strong> : Returns `true` if the operands are equal in
+  value.
+- <strong> Not equal to (`!=`) </strong> : Returns `true` if the operands are not
+  equal in value.
+- <strong>Strict equal to (`===`) </strong> : Returns `true` if the operands are
+  equal in value and type.
+- <strong>Strict not equal to (`!==`) </strong> : Returns `true` if the operands
+  are not equal in value or type.
+- <strong>Greater than (`>`) </strong> : Returns `true` if the left operand is greater
+  than the right operand.
 - <strong>Less than (`<`) </strong> : Returns `true` if the left operand is less than the right operand.
-- <strong>Greater than or equal to (`>=`) </strong> : Returns `true` if the left operand is greater than or equal to the right operand.
+- <strong>Greater than or equal to (`>=`) </strong> : Returns `true` if the left
+  operand is greater than or equal to the right operand.
 - <strong>Less than or equal to (`<=`) </strong> : Returns true if the left operand is less than or equal to the right operand.
 
 ```js
@@ -87,14 +96,16 @@ console.log(a >= b); // Output: true
 console.log(a <= b); // Output: false
 ```
 
-<br /><br />
+<br />
+<br />
 
 ## Logical Operators
 
 Logical operators are used to combine and manipulate boolean values. JavaScript supports the following logical operators:
 
 - <strong>Logical AND (`&&`) </strong> : Returns `true` if both operands are `true`.
-- <strong>Logical OR (`||`) </strong> : Returns `true` if at least one of the operands is `true`.
+- <strong>Logical OR (`||`) </strong> : Returns `true` if at least one of the operands
+  is `true`.
 - <strong>Logical NOT (`!`) </strong> : Negates the boolean value of the operand.
 
 ```javascript
@@ -107,17 +118,9 @@ console.log(x > y || y > z); // Output: true
 console.log(!(x > y)); // Output: false
 ```
 
-<br /><br />
+<br />
+<br />
 
 ## Conclusion
 
 Operators and assignments are essential elements of JavaScript that allow you to perform various operations, comparisons, and assignments in your code. Understanding these concepts is crucial for manipulating data, controlling program flow, and creating effective JavaScript programs.
-
-{/* <!-- Meta Title: JavaScript Operators and Assignments: Performing Operations and Assigning Values -->
-
-<!-- Meta Description: Discover the power of operators and assignments in JavaScript. Learn about arithmetic operators for mathematical calculations, assignment operators for assigning values, comparison operators for making comparisons, and logical operators for manipulating boolean values. Master the art of performing operations and assigning values in JavaScript. -->
-
-<!-- Meta Keywords: JavaScript, operators, assignments, arithmetic operators, assignment operators, comparison operators, logical operators, programming fundamentals --> */}
-
-
-export default ({ children }) => <div className="prose">{children}</div>;

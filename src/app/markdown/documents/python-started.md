@@ -50,10 +50,3 @@ Comparison operators are used to compare values and produce Boolean results. Her
 Booleans are a fundamental part of programming, allowing you to make logical decisions and control program flow based on conditions. By understanding Boolean values, logical operators, Boolean expressions, and comparison operators, you can create dynamic and responsive programs that adapt to different scenarios.
 
 Explore the versatility of Booleans in your programming projects, leverage logical operators and comparison operators to create meaningful conditions, and make informed decisions in your code. With a solid understanding of Booleans and their operations, you'll have the tools to write robust and effective programs.
-{/\* <!-- Meta Title: Booleans in Programming: Harnessing the Power of True and False
-
-Meta Description: Dive into the world of Booleans in programming and discover how they enable logical decision-making, condition evaluation, and program flow control. Learn about Boolean values, logical operators, comparison operators, and Boolean expressions. Enhance your programming skills by leveraging the power of Booleans. \*/}
-
-{/* Meta Keywords: programming, Booleans, Boolean values, logical operators, comparison operators, Boolean expressions, conditional statements, decision-making, program flow control. --> \*/} */}
-
-export default ({ children }) => <div className="prose">{children}</div>;

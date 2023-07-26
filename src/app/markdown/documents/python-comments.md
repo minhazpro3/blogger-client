@@ -59,11 +59,3 @@ In the above code, the less than operator (`<`) is used to compare the values of
 Comparison operators are essential tools in programming for comparing values and making decisions based on conditions. By understanding the syntax and functionality of comparison operators, you can write code that evaluates relationships between values and controls program flow accordingly.
 
 Experiment with comparison operators in your programming projects, explore their versatility, and leverage their power to make intelligent decisions in your code. With a solid understanding of comparison operators, you'll have the ability to create dynamic and responsive programs that adapt to different scenarios.
-
- {/* <!-- Meta Title: Comparison Operators in Programming: Evaluating Values and Making Decisions */}
-
-{/* Meta Description: Discover the world of comparison operators in programming and learn how they enable you to compare values, make decisions, and control program flow based on specific conditions. Explore the syntax and functionality of commonly used comparison operators and enhance your programming skills. */}
-
-{/* // Meta Keywords: programming, comparison operators, equality, inequality, greater than, less than, decision-making, conditional statements, program flow control. -->  */}
-
-export default ({ children }) => <div className="prose">{children}</div>;
