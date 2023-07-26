@@ -1,5 +1,7 @@
 ---
-title: "Python Comments"
+title: Comparison Operators in Programming Evaluating Values and Making Decisions
+description: Discover the world of comparison operators in programming and learn how they enable you to compare values, make decisions, and control program flow based on specific conditions. Explore the syntax and functionality of commonly used comparison operators and enhance your programming skills.
+keywords: programming, comparison operators, equality, inequality, greater than, less than, decision-making, conditional statements, program flow control.
 ---
 
 # Comparison Operators in Programming: Comparing Values and Making Decisions

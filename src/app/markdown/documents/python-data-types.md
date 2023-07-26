@@ -25,5 +25,3 @@ By mastering operators, you have gained the ability to solve different programmi
 As you continue your JavaScript journey, remember to follow best practices, write clear and concise code, and consider the readability and maintainability of your programs. Additionally, stay updated with new features and enhancements introduced in the language to leverage the full potential of JavaScript.
 
 Congratulations on completing the operator section! You are now equipped with the knowledge and skills to utilize operators effectively in your JavaScript projects. Keep applying what you've learned, experiment with different scenarios, and never stop exploring new possibilities in JavaScript programming.
-
-export default ({ children }) => <div className="prose">{children}</div>;
