@@ -1,7 +1,5 @@
 ---
-title: A Comprehensive Guide to Operators in JavaScript
-description: Explore the world of operators in JavaScript and learn how to perform calculations, make comparisons, and manipulate data using arithmetic, assignment, comparison, logical, bitwise, unary, and ternary operators. Master the fundamental tools of JavaScript programming.
-keywords: JavaScript, operators, arithmetic operators, assignment operators, comparison operators, logical operators, bitwise operators, unary operators, ternary operator, programming fundamentals
+title: Python Syntax
 ---
 
 # Operators in Javascript

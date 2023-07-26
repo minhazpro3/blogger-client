@@ -1,7 +1,5 @@
 ---
-title: Performing Operations and Assigning Values -->
-description: Discover the power of operators and assignments in JavaScript. Learn about arithmetic operators for mathematical calculations, assignment operators for assigning values, comparison operators for making comparisons, and logical operators for manipulating boolean values. Master the art of performing operations and assigning values in JavaScript. -->
-keywords: JavaScript, operators, assignments, arithmetic operators, assignment operators, comparison operators, logical operators, programming fundamentals
+title: Python Variables
 ---
 
 # Operators and Assignments in JavaScript

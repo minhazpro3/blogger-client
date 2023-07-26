@@ -1,7 +1,5 @@
 ---
-title: Harnessing the Power of True and False
-description: Dive into the world of Booleans in programming and discover how they enable logical decision-making, condition evaluation, and program flow control. Learn about Boolean values, logical operators, comparison operators, and Boolean expressions. Enhance your programming skills by leveraging the power of Booleans.
-keywords: programming, Booleans, Boolean values, logical operators, comparison operators, Boolean expressions, conditional statements, decision-making, program flow control.
+title: Python Started
 ---
 
 # Booleans in Programming: Understanding Boolean Values and Operations

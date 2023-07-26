@@ -1,89 +1,53 @@
-import { MDXRemote } from "next-mdx-remote";
 import MarkdownPreview from "@/lib/markdownPreview";
 import { getPostBySlug } from "@/lib/mdx";
-import { MDXProvider } from "@mdx-js/react";
-// import { getPostBySlug } from "@/pages/api/v2/doc/[slug]";
-// interface ParamsTypes {
-//   slug: string;
-//   lang: string;
-// }
 
-// interface DataTypes {
-//   msg: string;
-//   data: string;
-// }
+interface MetaData {
+  title: string;
+}
 
-// async function getData(slug: string): Promise<DataTypes> {
-//   try {
-//     const res = await fetch(
-//       `https://blogger-front.vercel.app/api/v2/doc/${slug}`,
-//       // `http://localhost:3000/api/v2/doc/${slug}`,
-//       {
-//         method: "GET",
-//       }
-//     );
-//     if (res.status !== 200) {
-//       throw new Error("Faild to fetch data");
-//     }
-//     return res.json() as Promise<DataTypes>;
-//   } catch (err) {
-//     throw new Error("Faild to fetch data");
-//   }
-// }
+interface Meta {
+  data: MetaData;
+}
 
-// const Page = async ({ params }: { params: ParamsTypes }) => {
-//   const { msg, data }: DataTypes = await getData(params.slug);
-//   console.log(msg);
-//   return (
-//     <div>
-//       {/* <MDXRemote source={data} /> */}
-//       <MarkdownPreview markdownContent={data} />
-//     </div>
-//   );
-// };
-
-// export default Page;
-
-const getPageContent = async (slug: string) => {
-  try {
-    const { meta, content } = await getPostBySlug(slug);
-    return { meta, content };
-  } catch (err) {
-    new Error("Slug not found");
+// Load single page content as string to use getPostBySlug query
+const getPageContent = (slug: string) => {
+  const result = getPostBySlug(slug);
+  if (!result) {
+    // Handle the case when getPostBySlug returns undefined
+    // For example, you could throw an error or return a default value
+    throw new Error("Post not found");
   }
+
+  const { meta, content } = result;
+  return { meta, content };
 };
-
-interface MetaType {
-  title?: string;
-  description?: string;
-  keywords?: string;
+// Helper function to convert generic 'meta.data' to 'MetaData'
+function convertToMetaData(data: { [key: string]: any }): MetaData {
+  return {
+    title: (data as MetaData).title || "", // a default value if 'title' is missing
+  };
 }
 
-interface MetaTypes {
-  meta?: MetaType | undefined;
+// eslint-disable-next-line @typescript-eslint/require-await
+export async function generateMetadata({ params }: { params: string }) {
+  const { meta } = getPageContent((params as unknown as { slug: string }).slug);
+  // Convert generic 'meta.data' to 'MetaData'
+  const metaData: MetaData = convertToMetaData(meta.data);
+  // Create the 'Meta' object with the converted data
+  const metaObject: Meta = {
+    data: metaData,
+  };
+  return metaObject;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const metaData: MetaTypes = await getPageContent(params.slug);
-  return { title: metaData?.meta && metaData.meta.title };
-}
+const Page = ({ params }: { params: { slug: string } }) => {
+  const { content } = getPageContent(params.slug);
 
-const Page = async ({ params }: { params: { slug: string } }) => {
-  const { content }: { content?: any } = await getPageContent(params.slug);
   return (
-    <section className="prose py-24">
-      {/* <div className='container py-4 prose'>{content}</div> */}
-      {/* <MDXRemote
-        components={...content}
-        compiledSource={""}
-        scope={undefined}
-        frontmatter={undefined}
-      /> */}
-      {content}{" "}
+    <section className="py-24">
+      <div className="prose">
+        <MarkdownPreview markdownContent={content} />
+      </div>
     </section>
   );
 };

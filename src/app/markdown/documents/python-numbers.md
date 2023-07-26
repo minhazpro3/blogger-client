@@ -1,7 +1,5 @@
 ---
-title: JavaScript Strict Not Equal To Operator (`!==`) Comparing Values and Types -->
-description: Discover the functionality of the strict not equal to operator (`!==`) in JavaScript. Learn how to compare values and types to determine if they are not equal. Explore examples and understand the importance of this operator for accurate comparisons in your JavaScript code.
-keywords: JavaScript, strict not equal to, !== operator, comparing values and types, programming fundamentals
+title: Python Numbers
 ---
 
 # Comparison Operators in JavaScript
