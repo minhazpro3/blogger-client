@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
 import matter from "gray-matter";
 
 const rootDirectory = path.join(process.cwd(), "src/app/markdown/documents");
