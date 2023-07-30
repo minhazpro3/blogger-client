@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import ReactStars from 'react-rating-star-with-type'
+import AllReview from './AllReview'
 const ReviewRatingBanner = () => {
     return (
         <div>
@@ -95,6 +96,7 @@ const ReviewRatingBanner = () => {
                     </div>
                 </div>
             </div>
+            <AllReview/>
         </div>
     )
 }

@@ -8,6 +8,7 @@ const Page = () => {
     <div className='mt-20'>
         <ReviewBanner/>
         <ReviewMenu/>
+        
     </div>
   )
 }

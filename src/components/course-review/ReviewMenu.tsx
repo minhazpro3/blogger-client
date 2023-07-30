@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import { AiFillCheckCircle } from 'react-icons/ai'
 import ReviewRatingBanner from './ReviewRatingBanner'
 import CourseDetails from './CourseDetails'
+ 
 
 const ReviewMenu = () => {
     const [value, setValue] = useState("details")
@@ -18,6 +18,7 @@ const ReviewMenu = () => {
                   <CourseDetails/>
                     : value === "review" &&
                     <ReviewRatingBanner/>
+                   
                     }
             </div>
         </div>
