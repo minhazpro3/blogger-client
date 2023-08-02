@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiFillCheckCircle } from 'react-icons/ai'
+import Instructors from './Instructors'
 const CourseDetails = () => {
   return (
     <div className='text-white my-12'>
@@ -50,6 +51,7 @@ const CourseDetails = () => {
 
         </div>
     </div>
+    <Instructors/>
 </div>
   )
 }

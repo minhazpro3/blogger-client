@@ -8,9 +8,9 @@ import ReactStars from 'react-rating-star-with-type'
 const ReviewBanner = () => {
   return (
     <div>
-         <div className="relative w-full h-[400px] bg-blue-950">
+         <div className="relative w-full h-[400px] bg-[#041734]">
         <div className='container mx-auto md:px-0 px-8'>
-          <div className="absolute top-12">
+          <div className="absolute top-24">
             <h4 className=" inline-block px-3 text-white py-1 font-medium rounded-full text-base bg-pink-700">
               Easy to mastery
             </h4>

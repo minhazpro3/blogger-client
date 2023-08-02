@@ -11,7 +11,7 @@ const AllReview = () => {
                 <div className="h-[2px] absolute top-8 opacity-20  bg-blue-800 w-full" > </div>
             </div>
             <div className='flex gap-x-3 my-8'>
-                <div className='w-[80px] h-[80px] relative'>
+                <div className='w-[100px] h-[70px] relative'>
                     <Image src={profStudent} alt='' fill />
                 </div>
                 <div className='flex flex-col gap-y-1'>
