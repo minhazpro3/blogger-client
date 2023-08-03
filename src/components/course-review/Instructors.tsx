@@ -45,17 +45,17 @@ const Instructors = () => {
                 <h2 className='text-2xl'>Your Instructors!</h2>
                 <div className="h-[2px] absolute top-8 opacity-20  bg-blue-800 w-full" > </div>
             </div>
-            <div className='flex flex-col gap-y-3 my-6'>
+            <div className='flex flex-col gap-y-1 my-6'>
                 {teachers.map((teacher, index) => (<div>
-                    <div className='flex flex-row gap-x-3'>
-                        <div className='relative w-[250px]  h-[220px] '>
+                    <div className='flex flex-row gap-x-5'>
+                        <div className='relative w-[270px]  h-[220px] '>
                             <Image className='rounded-lg' fill src={teacher.profilePic} alt='instructors' />
                         </div>
                         <div>
-                            <h2 className='text-xl'>{teacher.name}</h2>
-                            <h5>{teacher.title}</h5>
-                            <div className='flex flex-row gap-x-2'>
-                                <span className='flex flex-row gap-x-2 items-center'><AiOutlineTeam /> {teacher.students} Students</span>
+                            <h2 className='text-2xl'>{teacher.name}</h2>
+                            <h5 className='opacity-60'>{teacher.title}</h5>
+                            <div className='flex flex-row gap-x-2 opacity-60'>
+                                <span className='flex flex-row gap-x-2 items-center '><AiOutlineTeam /> {teacher.students} Students</span>
 
                                 <div className='flex flex-row gap-x-2'>
                                     <ReactStars
